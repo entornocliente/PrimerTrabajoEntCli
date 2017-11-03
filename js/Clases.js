@@ -16,16 +16,25 @@
 // si se ha hecho el intento de crear objeto, este está en la memoria?, en tal caso cómo destruirlo?
 
 // aquí sólo las validaciones
+// artiste ebe tener nombre y apellidos, por tanto array asociativo
 class Song{
-    constructor(songName, artist, album, genre, year, rating, description) {
+    // he decidido que nombreCompleto sea un array de strings en vez de un objeto, para evitar líos en estas versiones preliminares
+    constructor(songName, artist, album, nombreCompleto, genre, year, rating, description) {
 
         this.songName = songName;
-        this.description = description;
-        this.genre = genre;
         this.artist = artist;
         this.album = album;
-        this.rating = rating;
+        // no sepueden poner corchetes en lo de abajo
+        //this.nombreCompleto = {"nombre":"", "apellidos":""};
+        this.nombreCompleto = [];
+        this.genre = genre;
         this.year = year;
+        this.rating = rating;
+        this.description = description;
+
+
+
+
 
     }
 
@@ -111,6 +120,13 @@ class Song{
     }
     setyear(year){
         this.year = year;
+    }
+
+    getNombreCompleto(){
+        return `${this.nombreCompleto}`;
+    }
+    setName(songName){
+        this.nombreCompleto = nombreCompleto;
     }
 
 
